@@ -1,7 +1,7 @@
 function Page2() {
     return (
         <>
-            <h1>Page1</h1>
+            <h1>포트폴리오</h1>
         </>
     )
 }

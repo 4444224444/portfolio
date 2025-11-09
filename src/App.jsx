@@ -1,23 +1,13 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import Page1 from './Page1.jsx'
-import Page2 from './Page2.jsx'
+// src/App.jsx
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home.jsx'; // 확장자까지 적는 게 안전
 
 function App() {
   return (
-    <>
-      <nav>
-        <Link to="/page1">page1</Link> |{' '}
-        <Link to="/page2">page2</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/page1" element={<Page1 />} />
-        <Route path="/page2" element={<Page2 />} />
-      </Routes>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }
 
-export default App
-
-
+export default App;

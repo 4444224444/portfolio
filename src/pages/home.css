@@ -1,0 +1,163 @@
+/* src/pages/home.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.home {
+  min-height: 100vh;
+  background: #141414;
+  color: #FFFFFF;
+  position: relative;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* 좌측 상단 문구 영역 */
+.home__topLeft {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.home__eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.home__tagline {
+  margin: 8px 0 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* 좌측 하단 타이틀 */
+.home__bottomLeft {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+}
+
+.home__title {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 88px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+/* 메뉴 버튼 */
+.menu-btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s ease;
+}
+.menu-btn:hover { background: rgba(255,255,255,0.18); }
+
+.menu-btn span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+/* 버튼 X 애니메이션 */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 오른쪽 슬라이드 메뉴 */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 85vw);
+  background: #1a1a1a;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.menu li {
+  margin: 16px 0;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.menu a:hover {
+  opacity: 1;
+}
+
+/* 어두운 배경 오버레이 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 80;
+  animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 좌측 하단 타이틀 */
+.home__bottomLeft {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+.home__title {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 88px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
